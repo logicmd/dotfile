@@ -1,0 +1,17 @@
+[user]
+	name = Kevin Tong
+	email = logicmd@gmail.com
+[http]
+	proxy = http://proxy.logicmd.net:8484
+[credential]
+	helper = 'cache
+[gui]
+    encoding = utf-8
+	recentrepo = D:/Develop/OSMF/SMPMobile
+	recentrepo = D:/Develop/OSMF/SMPMobileLite
+	recentrepo = D:/Develop/OSMF/StrobeMediaPlayback/src/player/StrobeMediaPlayback
+	recentrepo = D:/Develop/Web/mystique
+[i18n]
+    commitencoding = GB2312
+[push]
+	default = simple

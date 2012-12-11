@@ -1,0 +1,109 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+set helplang=cn
+set cindent shiftwidth=4
+set nu
+set makeprg=g++\ %\ -o\ %:r
+map <F4> :call SetTitle()<CR> GkkO
+func SetTitle()
+call setline(1, "/*************************************************************************")
+call append(line("."), "Author: logicmd")
+call append(line(".")+1, "Created Time: ".strftime("%c"))
+call append(line(".")+2, "File Name: ".expand("%"))
+call append(line(".")+3, "Description: ")
+call append(line(".")+4, "************************************************************************/")
+call append(line(".")+6, "#include <cassert>")
+call append(line(".")+7, "#include <iostream>")
+call append(line(".")+8, "#include <vector>")
+call append(line(".")+9, "#include <map>")
+call append(line(".")+10, "#include <cstdio>")
+call append(line(".")+11, "#include <string>")
+call append(line(".")+12, "#include <utility>")
+call append(line(".")+13, "#include <algorithm>")
+call append(line(".")+16, "using namespace std;")
+call append(line(".")+17, "")
+endfunc
+map <F9> :call CR()<CR><cr>
+func CR()
+    let ext = expand("%:e")
+    if ext == "java"
+        exec "w"
+        exec "!start cmd /c javac %<.java & pause & java %< < %<.in & pause"
+    endif
+
+    if ext == "cpp"
+        exec "w!"
+        exec "!start cmd /c g++ %<.cpp -o %<.exe & pause & %<.exe < %<.in & pause"
+    endif
+
+    if ext == "c"
+        exec "w"
+        exec "!start cmd /c gcc %<.c -o %<.exe & pause & %<.exe < %<.in & pause"
+    endif
+
+    if ext == "py"
+        exec "w"
+        exec "!start cmd /c %<.py < %<.in & pause"
+    endif
+endfunc
+map <F10> :call CR2()<CR><CR>
+func CR2()
+    let ext = expand("%:e")
+    if ext == "java"
+        exec "w"
+        exec "!start cmd /c javac %<.java & pause & java %< & pause"
+    endif
+
+    if ext == "cpp"
+        exec "w!"
+        exec "!start cmd /c g++ %<.cpp -o %<.exe & pause & %<.exe  & pause"
+    endif
+
+    if ext == "c"
+        exec "w"
+        exec "!start cmd /c gcc %<.c -o %<.exe & pause & %<.exe  & pause"
+    endif
+
+    if ext == "py"
+        exec "w"
+        exec "!start cmd /c %<.py & pause"
+    endif
+endfunc
+
+colorscheme desert
+
+set guifont=Consolas:h12
+set nocp
+filetype plugin on
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+set tabstop=4
+set shiftwidth=4
+set expandtab

@@ -29,10 +29,15 @@ Package Control
 
 SublimeLinter
 =============
+    "sublimelinter_syntax_map":
     {
-        c: 'cppchecker'
-        cpp: 'cppchecker'
-        java: 'javac -XLint'
+        "java": "javac -XLint",
+        "C++": "c_cpplint",
+        "C": "c_cpplint"
+    },
+    "sublimelinter_executable_map":
+    {
+        "c_cpplint": "D:/Develop/dotfile/sublime/cpplint.py"
     }
 
 

@@ -41,3 +41,15 @@ Java
     ECHO -----------OUTPUT-----------
     java -Duser.country=US %~n1
     )
+
+SublimeLinter
+=============
+
+    {
+        "sublimelinter_executable_map":
+        {
+            "C": "cppcheck",
+            "C++": "cppcheck",
+            "Java": "javac -Xlint"
+        }
+    }

@@ -1,0 +1,8 @@
+{
+    "sublimelinter_executable_map":
+    {
+        "C": "cppcheck",
+        "C++": "cppcheck",
+        "Java": "javac -Xlint"
+    }
+}

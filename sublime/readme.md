@@ -1,3 +1,18 @@
+Preferences
+===========
+```Preferences.sublime-settings```
+
+    {
+        "font_size": 11.0,
+        "tab_size": 4,
+        "translate_tabs_to_spaces": true,
+        "trim_trailing_white_space_on_save": true,
+        "shift_tab_unindent": true,
+        "rulers": [80]
+    }
+
+
+
 Plugin
 ======
 Package Control
@@ -5,11 +20,26 @@ Package Control
 - SublimeLinter           v
 - DocBlockr               v
 - PythonTidy
-- SideBarEnhancements
+- SideBarEnhancements     v
 - MarkdownPreview         v
 - Emmet                   v
-- Git
+- Git                     v
 - <del>CTag</del>
+- Sublime CodeIntel       v
+
+SublimeLinter
+=============
+    "sublimelinter_syntax_map":
+    {
+        "java": "javac -XLint",
+        "C++": "c_cpplint",
+        "C": "c_cpplint"
+    },
+    "sublimelinter_executable_map":
+    {
+        "c_cpplint": "D:/Develop/dotfile/sublime/cpplint.py"
+    }
+
 
 
 Java

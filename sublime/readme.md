@@ -49,12 +49,32 @@ Java
 
 
 ### JavaC.sublime-build
+    C:\Users\Kai\AppData\Roaming\Sublime Text 2\Packages\Java
+
 
     {
         //"cmd": ["javac", "$file"],
         "cmd": ["runJava.bat", "$file"],
         "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
         "selector": "source.java"
+    }
+
+### C++.sublime-build
+    C:\Users\Kai\AppData\Roaming\Sublime Text 2\Packages\C++
+
+    {
+        "cmd": ["g++", "-Wall", "-Wextra", "-pedantic", "-std=c++11",   "${file}", "-o", "${file_path}/${file_base_name}"],
+        "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+        "working_dir": "${file_path}",
+        "selector": "source.c, source.c++",
+
+        "variants":
+        [
+            {
+                "name": "Run",
+                "cmd": ["bash", "-c", "g++ -Wall -Wextra -pedantic -std=c++11 '${file}' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"]
+            }
+        ]
     }
 
 

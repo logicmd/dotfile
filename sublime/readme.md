@@ -1,5 +1,8 @@
-Preferences
-===========
+Sublime Settings
+================
+
+Sublime Preferences
+-------------------
 ```Preferences.sublime-settings```
 
     {
@@ -14,7 +17,7 @@ Preferences
 
 
 Plugin
-======
+------
 Package Control
 
 - SublimeLinter           v
@@ -28,7 +31,7 @@ Package Control
 - Sublime CodeIntel       v
 
 SublimeLinter
-=============
+-------------
     "sublimelinter_syntax_map":
     {
         "java": "javac -XLint",
@@ -43,7 +46,7 @@ SublimeLinter
 
 
 Java
-====
+----
 - http://compilr.org/tuts/compile-and-run-java-programs/
 - http://rednaxelafx.iteye.com/blog/696436
 
@@ -93,7 +96,7 @@ Java
     )
 
 SublimeLinter
-=============
+-------------
 
     {
         "sublimelinter_executable_map":

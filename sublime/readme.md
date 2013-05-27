@@ -3,7 +3,6 @@ Sublime Settings
 
 Sublime Preferences
 -------------------
-```Preferences.sublime-settings```
 
     {
         "font_size": 11.0,

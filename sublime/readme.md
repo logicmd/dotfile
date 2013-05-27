@@ -30,6 +30,10 @@ Package Control
 - <del>CTag</del>
 - Sublime CodeIntel       v
 
+- Sublime Web Inspector
+- Flatland
+
+
 SublimeLinter
 -------------
     "sublimelinter_syntax_map":

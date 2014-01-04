@@ -6,6 +6,9 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
+
+# To download patched-dejavu
+# git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
 ZSH_THEME="agnoster"
 
 # Example aliases
@@ -40,4 +43,3 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 # optionally set DEFAULT_USER in ~/.zshrc to your regular username to hide the “user@hostname” info when you’re logged in as yourself on your local machine.
-DEFAULT_USER=tangkai@virtual-machine

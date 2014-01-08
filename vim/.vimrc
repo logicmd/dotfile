@@ -252,10 +252,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "
 ""状态栏增强展示
 Bundle 'Lokaltog/vim-powerline'
-"if want to use fancy, need to add font patch -> git clone git://gist.github.com/1630581.git
-"~/.fonts/ttf-dejavu-powerline
-"let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
+"if want to use fancy, need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
+
+let g:Powerline_symbols = 'fancy'
+set guifont=Consolas\ for\ Powerline\ FixedD
+set laststatus=2
 
 "################# 具体语言语法高亮 ###############
 "

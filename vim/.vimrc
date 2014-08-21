@@ -5,7 +5,7 @@
 "设置编码
 
 set encoding=utf-8
-set fileencoding=gb18030
+"set fileencoding=gb18030
 set fileencodings=utf-8,shift-jis,gbk,gb18030,cp936,utf-16,big5,ucs-bom,chinese,lati
 
 "设置语言
@@ -198,6 +198,7 @@ set grepprg=grep\-nH\$*
 filetype indent on
 set nocp
 
+
 "==========================================
 "" bundle 插件管理和配置项
 "==========================================
@@ -208,13 +209,13 @@ set nocp
 " "python dependent:  pep8, pyflake
 "
 "filetype off " required! turn off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "################### 插件管理 ###################"
 "
 ""使用Vundle来管理Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " vim plugin bundle control, command model
 " " :BundleInstall     install
 " " :BundleInstall!    update
@@ -223,7 +224,7 @@ Bundle 'gmarik/vundle'
 "################### 补全及快速编辑 ###################"
 "
 ""迄今为止用到的最好的自动VIM自动补全插件
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 "youcompleteme  默认tab  s-tab 和自动补全冲突
 "let g:ycm_key_list_select_completion=['<c-n>']
 "let g:ycm_key_list_select_completion = ['<Down>']
@@ -239,7 +240,7 @@ Bundle 'Valloric/YouCompleteMe'
 
 "################### 导航 ###################"
 ""目录导航
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 "map <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
@@ -251,7 +252,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "################### 显示增强 ###################"
 "
 ""状态栏增强展示
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 "if want to use fancy, need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
 
 let g:Powerline_symbols = 'fancy'
@@ -261,7 +262,7 @@ set laststatus=2
 "################# 具体语言语法高亮 ###############
 "
 "" for python.vim syntax highlight
-Bundle 'hdima/python-syntax'
+Plugin 'hdima/python-syntax'
 let python_highlight_all = 1
 
 " for golang
@@ -269,7 +270,7 @@ let python_highlight_all = 1
 " Bundle 'Blackrush/vim-gocode'
 "
 " " for markdown
-Bundle 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 "
 " " for javascript
@@ -286,3 +287,18 @@ let g:vim_markdown_folding_disabled=1
 "
 " "for nginx conf file highlight.   need to confirm it works
 " Bundle 'thiderman/nginx-vim-syntax'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+

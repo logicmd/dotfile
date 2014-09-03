@@ -252,7 +252,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "################### 显示增强 ###################"
 "
 ""状态栏增强展示
-Plugin 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "if want to use fancy, need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
 
 let g:Powerline_symbols = 'fancy'

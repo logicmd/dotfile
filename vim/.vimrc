@@ -252,12 +252,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "################### 显示增强 ###################"
 "
 ""状态栏增强展示
-Plugin 'Lokaltog/vim-powerline'
-"if want to use fancy, need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
-
-let g:Powerline_symbols = 'fancy'
-set guifont=Consolas\ for\ Powerline\ FixedD
+Plugin 'bling/vim-airline'
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
+
 
 "################# 具体语言语法高亮 ###############
 "
@@ -302,3 +301,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"if has("gui_running")
+"   let s:uname = system("uname")
+"   if s:uname == "Darwin\n"
+"      set guifont=Menlo\ Regular\ for\ Powerline:h14
+"   endif
+"endif

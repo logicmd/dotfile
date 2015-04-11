@@ -25,7 +25,7 @@ Package Control
 - SideBarEnhancements     v
 - MarkdownPreview         v
 - Emmet                   v
-- Git                     v
+- GitGutter               v
 - <del>CTag</del>
 - Sublime CodeIntel       v
 
